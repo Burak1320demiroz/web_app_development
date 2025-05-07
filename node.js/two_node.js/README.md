@@ -243,34 +243,3 @@ Content-Type: application/json
   "errorMessage": "Forbidden - Insufficient permissions"
 }
 ```
-
----
-
-## Test Endpoint
-
-**Endpoint:** `GET http://localhost:3000/test`
-
-### Responses
-**Success (200 OK):**
-```json
-{
-  "message": "Fonksiyon testi başarılı",
-  "results": {
-    "visitor": {
-      "email": "visitor@example.com",
-      "name": "Visitor",
-      "role": "visitor"
-    },
-    "user": {
-      "email": "user@example.com",
-      "name": "Regular",
-      "role": "user"
-    },
-    "admin": {
-      "email": "admin@example.com",
-      "name": "Super",
-      "role": "admin"
-    }
-  }
-}
-```
