@@ -2,9 +2,18 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
+const path = require('path');
 
 // JSON'u ayrıştırmak için ara yazılım
 app.use(bodyParser.json());
+
+// Statik dosyaları serve et
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Ana sayfa
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'index.html'));
+});
 
 const SECRET_KEY = "your_secret_key"; // Güvenli bir secret belirleyin
 
@@ -170,6 +179,11 @@ app.get('/admin/users', checkPermission('admin'), (req, res) => {
   }));
   
   res.status(200).json(userList);
+});
+
+// Admin paneli için HTML sayfası
+app.get('/admin', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views', 'index.html'));
 });
 
 // Fonksiyon denemesi için test endpoint'i
