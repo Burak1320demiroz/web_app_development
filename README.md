@@ -1,6 +1,4 @@
-# Web_Application_Development
-- HTML (HyperText Markup Language) Notes
-- CSS (Cascading Style Sheets) Notes
+# node.js_Development
 - Node.js (Server Side JavaScript)
     - one_node.js
     - two_node.js
